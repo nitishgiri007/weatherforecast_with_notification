@@ -12,6 +12,7 @@ async function sendSMS(name, windSpeed, weatherMain, tempMin, tempMax) {
     "10bcdbc897c010166221d070e1a75f92"
   );
   try {
+    //check
     const message = await client.messages.create({
       body: `Place: ${name}, Wind Speed: ${windSpeed}, Weather Main: ${weatherMain}, Temp Min: ${tempMin}, Temp Max: ${tempMax}`,
       from: "+17152008463",
