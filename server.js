@@ -8,11 +8,10 @@ const apiKey = process.env.apiKey;
 
 async function sendSMS(name, windSpeed, weatherMain, tempMin, tempMax) {
   const client = new twilio(
-    "ACa4739096866fcb76f96745a812635f37",
-    "10bcdbc897c010166221d070e1a75f92"
+    `${process.env.accountSid}`,
+    `${process.env.authToken}`
   );
   try {
-    //check
     const message = await client.messages.create({
       body: `Place: ${name}, Wind Speed: ${windSpeed}, Weather Main: ${weatherMain}, Temp Min: ${tempMin}, Temp Max: ${tempMax}`,
       from: "+17152008463",
