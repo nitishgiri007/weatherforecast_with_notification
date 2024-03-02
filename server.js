@@ -34,7 +34,11 @@ async function sendSMS(
     console.error(err);
   }
 }
-app.get("/", async function (req, res) {});
+app.get("/", async function (req, res) {
+  res.send({
+    message: "welcome to the api !!!"
+  })
+});
 
 app.post("/getweatherreport", async function (req, res) {
   const address = req.body.address;
